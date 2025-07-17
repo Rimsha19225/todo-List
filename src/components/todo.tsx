@@ -38,20 +38,17 @@ const Todo = () => {
         </h1>
         <br />
       </div>
-      <div className="flex gap-4 justify-center">
+      <div className="flex flex-col md:flex-row gap-4 justify-center w-full max-w-[95%] md:max-w-[90%] m-auto">
         <input
           ref={referenceInput}
           type="text"
           placeholder="Add a Task.."
-          onKeyDown={handleKeyDown} // Corrected: Moved here
-          className="w-[50%] border-2 border-[#0B666A] text-[#071952] font-semibold bg-white p-2 rounded ml-2"
+          onKeyDown={handleKeyDown}
+          className="w-[100%] md:w-[50%] border-2 border-[#0B666A] text-[#071952] font-semibold bg-white p-2 rounded ml-0 md:ml-2"
         />
-        <button
-          onClick={handleAddTask}
-          className="px-3 rounded bg-[#0B666A] text-[#97FEED]"
-        >
-          Add Task
-        </button>
+        <div className="flex justify-center md:w-[10%]">
+          <button onClick={handleAddTask} className="w-[40%] md:w-[100%] px-3 py-2 rounded bg-[#0B666A] text-[#97FEED]">Add Task</button>
+        </div>
       </div>
       <div>
         {tasks.map((elem) => (
